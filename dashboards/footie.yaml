@@ -1,0 +1,175 @@
+type: sections
+max_columns: 4
+icon: mdi:soccer
+path: footie
+sections:
+  - type: grid
+    cards:
+      - type: heading
+        heading: USWNT
+        heading_style: title
+        icon: mdi:flag
+      - type: custom:teamtracker-card
+        entity: sensor.uswnt
+        show_league: false
+        show_rank: true
+        outline: true
+        visibility:
+          - condition: state
+            entity: sensor.uswnt
+            state_not: POST
+          - condition: state
+            entity: sensor.uswnt
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.international_friendly_uswnt
+        card_title: USWNT Intl. Friendlies
+        team_name: USWNT
+        team_id: false
+        team_url: ""
+        outline: false
+        visibility:
+          - condition: state
+            entity: sensor.international_friendly_uswnt
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.women_s_olympic_soccer_uswnt
+        show_league: false
+        show_rank: true
+        debug: false
+        card_title: 2024 Olympics
+        visibility:
+          - condition: state
+            entity: sensor.women_s_olympic_soccer_uswnt
+            state_not: POST
+      - type: custom:teamtracker-card
+        entity: sensor.concacaf_gold_cup_uswnt
+        card_title: CONCACAF Gold Cup
+        visibility:
+          - condition: state
+            entity: sensor.concacaf_gold_cup_uswnt
+            state_not: POST
+      - type: markdown
+        content: "**No upcoming games!**"
+        visibility:
+          - condition: state
+            entity: sensor.uswnt
+            state: POST
+          - condition: state
+            entity: sensor.concacaf_gold_cup_uswnt
+            state: POST
+          - condition: state
+            entity: sensor.women_s_olympic_soccer_uswnt
+            state: POST
+          - condition: state
+            entity: sensor.international_friendly_uswnt
+            state: NOT_FOUND
+    column_span: 4
+  - type: grid
+    cards:
+      - type: heading
+        heading: NWSL
+        heading_style: title
+        icon: mdi:flag
+      - type: custom:teamtracker-card
+        entity: sensor.seattle_reign_fc
+        card_title: Seattle Reign
+        visibility:
+          - condition: state
+            entity: sensor.seattle_reign_fc
+            state_not: NOT_FOUND
+        show_league: false
+        outline: false
+      - type: custom:teamtracker-card
+        entity: sensor.gotham_fc
+        card_title: Gotham
+        visibility:
+          - condition: state
+            entity: sensor.gotham_fc
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.washington_spirit
+        card_title: Washington Spirit
+        visibility:
+          - condition: state
+            entity: sensor.washington_spirit
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.houston_dash
+        card_title: Houston Dash
+        visibility:
+          - condition: state
+            entity: sensor.houston_dash
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.utah_royals
+        card_title: Utah Royals
+        visibility:
+          - condition: state
+            entity: sensor.utah_royals
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.san_diego_wave
+        card_title: San Diego Wave
+        visibility:
+          - condition: state
+            entity: sensor.san_diego_wave
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.angel_city_fc
+        card_title: Angel City
+        visibility:
+          - condition: state
+            entity: sensor.angel_city_fc
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.chicago_stars_fc
+        card_title: Chicago Stars
+        visibility:
+          - condition: state
+            entity: sensor.chicago_stars_fc
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.bay_fc
+        card_title: Bay FC
+        visibility:
+          - condition: state
+            entity: sensor.bay_fc
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.north_carolina_courage_fc
+        card_title: NC Courage
+        visibility:
+          - condition: state
+            entity: sensor.north_carolina_courage_fc
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.racing_louisville_fc
+        card_title: Racing Louisville
+        visibility:
+          - condition: state
+            entity: sensor.racing_louisville_fc
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.orlando_pride_fc
+        card_title: Orlando Pride
+        visibility:
+          - condition: state
+            entity: sensor.orlando_pride_fc
+            state_not: NOT_FOUND
+      - type: custom:teamtracker-card
+        entity: sensor.portland_thorns_fc
+        card_title: Portland Thorns
+        visibility:
+          - condition: state
+            entity: sensor.portland_thorns_fc
+            state_not: NOT_FOUND
+    column_span: 4
+theme: Catppuccin Mocha
+cards: []
+background:
+  opacity: 20
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
